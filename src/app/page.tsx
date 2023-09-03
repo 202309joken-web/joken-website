@@ -1,7 +1,9 @@
+import Header from "../../components/header/Header";
+
 export default function Home() {
   return (
     <>
-      <header>ここがﾍｯﾀﾞ</header>
+      <Header />
       <main>ここがメインの部分ですねはい</main>
       <footer>ここがﾌｯﾀ</footer>
     </>
