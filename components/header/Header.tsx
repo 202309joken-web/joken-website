@@ -5,7 +5,7 @@ import { styled } from "styled-components";
 
 const Header = () => {
   const headerDatas = [
-    { href: "/", title: "HOME" },
+    { href: "/home", title: "HOME" },
     { href: "/about", title: "サークル概要" },
     { href: "/record", title: "活動記録" },
     { href: "/sns", title: "SNS" },
@@ -15,7 +15,13 @@ const Header = () => {
     <Setposition>
       <ListHeaderList>
         <TitleLogo>
-          <SpanBlue>J</SpanBlue>oken
+          <LinkB href="/home">
+            <i>
+              <b>
+                <SpanBlue>J</SpanBlue>oken
+              </b>
+            </i>
+          </LinkB>
         </TitleLogo>
         <Flexul>
           {headerDatas.map((headerData, index) => {
@@ -36,7 +42,7 @@ const Header = () => {
 export default Header;
 
 const SpanBlue = styled.span`
-  color: blue;
+  color: var(--color_theme_joken);
 `;
 
 const ListHeaderList = styled.nav`
@@ -58,7 +64,7 @@ const TabList = styled.li`
 
 const LinkA = styled(Link)`
   color: #000;
-  font-size: 0.95rem;
+  font-size: 1.5rem;
   font-family:
     "Montserrat",
     -apple-system,
@@ -74,12 +80,28 @@ const LinkA = styled(Link)`
     "Noto Color Emoji";
 
   &:hover {
-    color: blue;
+    color: var(--color_theme_joken);
+  }
+`;
+
+const LinkB = styled(Link)`
+  color: black;
+  &:hover {
+    opacity: 0.5;
   }
 `;
 
 const Setposition = styled.header`
   position: fixed;
+  z-index: 999;
+  background: #fff;
+  top: 0;
+  left: 0;
+  width: 100%;
+  padding: 0px 0px;
+  box-sizing: border-box;
+  height: 96px;
+  align-items: center;
 `;
 
 const Flexul = styled.ul`
