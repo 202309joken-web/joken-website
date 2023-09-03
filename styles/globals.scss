@@ -11,8 +11,6 @@
   margin: 0;
   text-decoration: none;
   box-sizing: border-box;
-  color: var(--color_theme_text);
-  background: var(--color_theme_back);
   font-family:
     Open Sans,
     sans-serif;
@@ -20,6 +18,8 @@
 
 html {
   scroll-behavior: smooth;
+  color: var(--color_theme_text);
+  background: var(--color_theme_back);
 }
 
 img {
