@@ -39,14 +39,15 @@ const DivWrap = styled.div`
   display: flex;
   height: 500px;
   position: relative;
-  margin: 0 40px;
+  max-width: 1500px;
+  margin: 0 auto;
   justify-content: center;
   align-items: center;
   & > p {
     position: absolute;
     &:first-child {
       top: 0;
-      left: 0;
+      left: 40px;
       font-size: 48px;
       width: 330px;
       display: flex;
@@ -59,7 +60,7 @@ const DivWrap = styled.div`
       font-size: 64px;
       font-weight: bold;
       bottom: 60px;
-      right: 0;
+      right: 40px;
       & span {
         color: var(--color_theme_joken);
       }
