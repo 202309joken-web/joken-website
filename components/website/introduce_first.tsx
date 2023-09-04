@@ -20,6 +20,7 @@ const IntroduceFirst = () => {
           height={windowWidth}
           alt="jokenのライン"
         />
+        <SpanBackground></SpanBackground>
         <p>
           <span>J</span>
           oken
@@ -36,6 +37,7 @@ const DivIntroduceFirst = styled.div`
   /* background: #eee; */
 `;
 const DivWrap = styled.div`
+  overflow: hidden;
   display: flex;
   height: 500px;
   position: relative;
@@ -44,6 +46,7 @@ const DivWrap = styled.div`
   justify-content: center;
   align-items: center;
   & > p {
+    z-index: 1;
     position: absolute;
     &:first-child {
       top: 0;
@@ -70,4 +73,25 @@ const DivWrap = styled.div`
 
 const ImageOrigin = styled(Image)`
   width: 120%;
+  position: relative;
+`;
+
+const SpanBackground = styled.span`
+  display: inline-block;
+  content: "";
+  width: 120%;
+  height: 300%;
+  position: absolute;
+  top: -100%;
+  left: 120%;
+  background: white;
+  animation: introduceFirstSpanBackground 2s ease;
+  @keyframes introduceFirstSpanBackground {
+    0% {
+      transform: translateX(-100%) rotate(-10deg);
+    }
+    100% {
+      transform: translateX(0) rotate(-10deg);
+    }
+  }
 `;
