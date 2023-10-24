@@ -51,7 +51,7 @@ const DivIntroduceDescription = styled.div`
     justify-content: center;
     flex-wrap: wrap;
     width: 90%;
-    border-bottom: 2px solid #8ad3f2;
+    border-bottom: 2px dashed #8ad3f2;
     padding-bottom: 100px;
     & > div {
       flex: 1;
