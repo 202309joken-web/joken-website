@@ -2,27 +2,31 @@
 
 import Link from "next/link";
 import { styled } from "styled-components";
+import HamMenu from "./ham_menu";
+
+export type HeaderData = {
+  href: string;
+  title: string;
+};
 
 const Header = () => {
-  const headerDatas = [
-    { href: "/home", title: "HOME" },
+  const headerDatas: HeaderData[] = [
+    { href: "/", title: "HOME" },
     { href: "/about", title: "サークル概要" },
     { href: "/record", title: "活動記録" },
     { href: "/sns", title: "SNS" },
   ];
 
   return (
-    <Setposition>
+    <HeaderElement>
+      <LinkLogo href="/">
+        <i>
+          <b>
+            <SpanBlue>J</SpanBlue>oken
+          </b>
+        </i>
+      </LinkLogo>
       <ListHeaderList>
-        <TitleLogo>
-          <LinkB href="/home">
-            <i>
-              <b>
-                <SpanBlue>J</SpanBlue>oken
-              </b>
-            </i>
-          </LinkB>
-        </TitleLogo>
         <Flexul>
           {headerDatas.map((headerData, index) => {
             return (
@@ -34,37 +38,73 @@ const Header = () => {
             );
           })}
         </Flexul>
+        <HamMenu headerData={headerDatas} />
       </ListHeaderList>
-    </Setposition>
+    </HeaderElement>
   );
 };
 
 export default Header;
 
+// <header>要素
+const HeaderElement = styled.header`
+  height: var(--len__header__height);
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  max-width: 1380px;
+  margin: 0 auto;
+  position: fixed;
+  background: white;
+  z-index: 999;
+`;
+
+// Jokenロゴ要素（リンク）
+const LinkLogo = styled(Link)`
+  font-size: 40px;
+  line-height: var(--len__header__height);
+  height: var(--len__header__height);
+  padding: 0 20px;
+  font-family:
+    "Montserrat",
+    -apple-system,
+    BlinkMacSystemFont,
+    "Segoe UI",
+    Roboto,
+    "Helvetica Neue",
+    Arial,
+    sans-serif,
+    "Apple Color Emoji",
+    "Segoe UI Emoji",
+    "Segoe UI Symbol",
+    "Noto Color Emoji";
+  color: black;
+  &:hover {
+    opacity: 0.5;
+  }
+`;
+
+// 青
 const SpanBlue = styled.span`
   color: var(--color_theme_joken);
 `;
 
 const ListHeaderList = styled.nav`
-  padding: 1rem 30px 1rem 30px;
   display: flex;
-  flex-wrap: inherit;
   align-items: center;
   justify-content: space-between;
-  width: 100%;
-  max-width: 1380px;
-  margin: 0 auto;
 `;
 
 const TabList = styled.li`
-  padding-left: 40px;
-  padding-right: 40px;
   list-style: none;
 `;
 
 const LinkA = styled(Link)`
+  padding: 0 30px;
   color: #000;
-  font-size: 1.5rem;
+  font-size: 1.3rem;
+  display: inline-block;
+  line-height: var(--len__header__height);
   font-family:
     "Montserrat",
     -apple-system,
@@ -84,46 +124,11 @@ const LinkA = styled(Link)`
   }
 `;
 
-const LinkB = styled(Link)`
-  color: black;
-  &:hover {
-    opacity: 0.5;
-  }
-`;
-
-const Setposition = styled.header`
-  position: fixed;
-  z-index: 999;
-  background: #fff;
-  top: 0;
-  left: 0;
-  width: 100%;
-  padding: 0px 0px;
-  box-sizing: border-box;
-  height: 96px;
-  align-items: center;
-`;
-
 const Flexul = styled.ul`
   display: flex;
-`;
-
-const TitleLogo = styled.p`
-  font-size: 40px;
-  color: #000;
-  font-family:
-    "Montserrat",
-    -apple-system,
-    BlinkMacSystemFont,
-    "Segoe UI",
-    Roboto,
-    "Helvetica Neue",
-    Arial,
-    sans-serif,
-    "Apple Color Emoji",
-    "Segoe UI Emoji",
-    "Segoe UI Symbol",
-    "Noto Color Emoji";
+  @media screen and (max-width: 767px) {
+    display: none;
+  }
 `;
 
 type HeaderListProps = {

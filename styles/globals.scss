@@ -1,5 +1,5 @@
 :root {
-  --len__header__height: 92px;
+  --len__header__height: 72px;
   --color_theme_back: white;
   --color_theme_back2: #ddd;
   --color_theme_text: black;
@@ -29,6 +29,16 @@ main {
 
 img {
   pointer-events: none;
+}
+
+p {
+  line-height: 150%;
+  font-size: 16px;
+}
+@media screen and (max-width: 467px) {
+  p {
+    font-size: 14px;
+  }
 }
 
 // // ダークモード対応の処理
