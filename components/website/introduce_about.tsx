@@ -12,7 +12,12 @@ const IntroduceAbout = () => {
             <span>ようこそ</span>
           </h2>
           <p>
-            日本大学工学部情報研究会、通称Jokenは、コンピュータに関することなら何でもござれ❗️なサークルです‼️😆質問などはメール
+            コンピュータを使った創作活動サークルです。プログラミング等を用いたゲーム・アプリ開発、3DCGによる作品や動画コンテンツの作成を行っています。
+          </p>
+
+          <p>
+            また、定期的に開催されるプログラミングの初心者講習会やLT(Lightning
+            Talk)会による各々の趣味の布教活動など、幅広く好奇心を深めることができます。
           </p>
           <Image
             className="right"
@@ -64,9 +69,15 @@ const DivIntroduceAbout = styled.div`
         }
       }
 
-      & p {
-        font-size: 18px;
+      @media screen and (max-width: 467px) {
+        padding: 60px 10px;
+        h2 {
+          font-size: 26px;
+        }
       }
+      /* & p {
+        font-size: 18px;
+      } */
 
       & img.right {
         position: absolute;
