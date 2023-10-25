@@ -6,7 +6,7 @@ const IntroduceAbout = () => {
   return (
     <DivIntroduceAbout>
       <div>
-        <div>
+        <div id="about">
           <h2>
             <span>Jokenへ</span>
             <span>ようこそ</span>

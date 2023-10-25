@@ -4,11 +4,20 @@ import styled from "styled-components";
 
 type Props = {
   isTextLeft: boolean;
+  blogData: IntroDesc;
+};
+
+export type IntroDesc = {
+  title: string;
+  desc: string;
+  image: string;
+  alt: string;
 };
 
 const IntroduceDescription = (props: Props) => {
   const isTextLeft = props.isTextLeft;
   const textClass = isTextLeft ? "text left" : "text";
+  const blogData = props.blogData;
   return (
     <DivIntroduceDescription>
       <div>
@@ -21,18 +30,16 @@ const IntroduceDescription = (props: Props) => {
             <span className="top"></span>
             <span className="bottom"></span>
             <Image
-              src="/images/DSC_0302.jpg"
+              src={blogData.image}
               width={2000}
               height={1600}
-              alt="サークルメンバー"
+              alt={blogData.alt}
             />
           </div>
         </div>
         <div className={textClass}>
-          <h3>ほげほげ</h3>
-          <p>
-            テキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキスト
-          </p>
+          <h3>{blogData.title}</h3>
+          <p>{blogData.desc}</p>
         </div>
       </div>
     </DivIntroduceDescription>
