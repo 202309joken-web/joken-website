@@ -52,7 +52,7 @@ const DivIntroduceAbout = styled.div`
     border-top: 6px solid #8ad3f2;
     border-bottom: 14px solid #8ad3f2;
     display: flex;
-    padding: 100px 10%;
+    padding: 140px 10%;
     justify-content: center;
     position: relative;
 
