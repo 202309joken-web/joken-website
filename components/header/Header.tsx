@@ -12,7 +12,7 @@ export type HeaderData = {
 const Header = () => {
   const headerDatas: HeaderData[] = [
     { href: "/", title: "HOME" },
-    { href: "/about", title: "サークル概要" },
+    { href: "/#about", title: "サークル概要" },
     { href: "/record", title: "活動記録" },
     { href: "/sns", title: "SNS" },
   ];

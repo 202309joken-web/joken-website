@@ -2,37 +2,20 @@
 import styled from "styled-components";
 import Link from "next/link";
 
-const IntroduceBlogs = () => {
-  const blogData = [
-    {
-      date: "2023.10.25",
-      category: "活動報告",
-      color: "var(--color_theme_joken)",
-      title: "こんにちは今回はタイピング練習をしていこうと思います。",
-      link: "/",
-    },
-    {
-      date: "2023.10.25",
-      category: "活動報告",
-      color: "var(--color_theme_joken)",
-      title: "こんにちは今回はタイピング練習をしていこうと思います。",
-      link: "/",
-    },
-    {
-      date: "2023.10.25",
-      category: "活動報告",
-      color: "var(--color_theme_joken)",
-      title: "こんにちは今回はタイピング練習をしていこうと思います。",
-      link: "/",
-    },
-    {
-      date: "2023.10.25",
-      category: "活動報告",
-      color: "var(--color_theme_joken)",
-      title: "こんにちは今回はタイピング練習をしていこうと思います。",
-      link: "/",
-    },
-  ];
+export type BlogSummary = {
+  date: string;
+  category: string;
+  color: string;
+  title: string;
+  link: string;
+};
+
+type Props = {
+  blogSummaries: BlogSummary[];
+};
+const IntroduceBlogs = (props: Props) => {
+  const blogSummaries = props.blogSummaries;
+
   return (
     <DivIntroduceBlogs>
       <div>
@@ -45,7 +28,7 @@ const IntroduceBlogs = () => {
           </span>
         </h2>
         <div>
-          {blogData.map((data, index) => {
+          {blogSummaries.map((data, index) => {
             return (
               <DivItem $color={data.color} key={index}>
                 <div>
