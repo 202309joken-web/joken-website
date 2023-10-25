@@ -4,6 +4,7 @@ import IntroduceAbout from "../../components/website/introduce_about";
 import IntroduceBlogs from "../../components/website/introduce_blogs";
 import IntroduceDescription from "../../components/website/introduce_description";
 import IntroduceFirst from "../../components/website/introduce_first";
+import IntroduceSchedule from "../../components/website/introduce_schedule";
 
 export default function Home() {
   return (
@@ -12,6 +13,7 @@ export default function Home() {
       <main>
         <IntroduceFirst />
         <IntroduceAbout />
+        <IntroduceSchedule />
         <IntroduceDescription isTextLeft={false} />
         <IntroduceDescription isTextLeft={true} />
         <IntroduceBlogs />
