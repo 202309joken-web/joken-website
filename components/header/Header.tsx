@@ -19,27 +19,29 @@ const Header = () => {
 
   return (
     <HeaderElement>
-      <LinkLogo href="/">
-        <i>
-          <b>
-            <SpanBlue>J</SpanBlue>oken
-          </b>
-        </i>
-      </LinkLogo>
-      <ListHeaderList>
-        <Flexul>
-          {headerDatas.map((headerData, index) => {
-            return (
-              <HeaderList
-                href={headerData.href}
-                title={headerData.title}
-                key={index}
-              />
-            );
-          })}
-        </Flexul>
-        <HamMenu headerData={headerDatas} />
-      </ListHeaderList>
+      <div>
+        <LinkLogo href="/">
+          <i>
+            <b>
+              <SpanBlue>J</SpanBlue>oken
+            </b>
+          </i>
+        </LinkLogo>
+        <ListHeaderList>
+          <Flexul>
+            {headerDatas.map((headerData, index) => {
+              return (
+                <HeaderList
+                  href={headerData.href}
+                  title={headerData.title}
+                  key={index}
+                />
+              );
+            })}
+          </Flexul>
+          <HamMenu headerData={headerDatas} />
+        </ListHeaderList>
+      </div>
     </HeaderElement>
   );
 };
@@ -49,14 +51,18 @@ export default Header;
 // <header>要素
 const HeaderElement = styled.header`
   height: var(--len__header__height);
-  display: flex;
-  justify-content: space-between;
-  width: 100%;
-  max-width: 1380px;
-  margin: 0 auto;
   position: fixed;
-  background: white;
+  width: 100%;
+  display: flex;
+  justify-content: center;
   z-index: 999;
+  & > div {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    max-width: 1380px;
+    background: white;
+  }
 `;
 
 // Jokenロゴ要素（リンク）
