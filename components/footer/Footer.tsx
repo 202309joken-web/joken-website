@@ -55,10 +55,8 @@ const PJokenCopyright = styled.p`
   font-size: 10px;
 `;
 
-const Footer = () => {
-  return (
-    <>
-      <FooterElement>
+const Footer = () => (
+    <FooterElement>
         <FooterLeft>
           <div>
             <PJokenIcon>
@@ -84,9 +82,7 @@ const Footer = () => {
           </div>
         </FooterRight>
       </FooterElement>
-    </>
   );
-};
 
 export default Footer;
 

@@ -25,13 +25,11 @@ const HamMenu = (props: Props) => {
       </DivHamMenu>
       <DivHeaderMenu $isOpen={isOpen} onClick={handleBackClick}>
         <ul onClick={(e) => e.stopPropagation()}>
-          {headerData.map((data, index) => {
-            return (
+          {headerData.map((data, index) => (
               <li key={index}>
                 <LinkA href={data.href}>{data.title}</LinkA>
               </li>
-            );
-          })}
+            ))}
         </ul>
       </DivHeaderMenu>
     </>

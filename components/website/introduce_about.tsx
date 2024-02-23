@@ -2,8 +2,7 @@
 import Image from 'next/image';
 import styled from 'styled-components';
 
-const IntroduceAbout = () => {
-  return (
+const IntroduceAbout = () => (
     <DivIntroduceAbout>
       <div>
         <div id="about">
@@ -37,7 +36,6 @@ const IntroduceAbout = () => {
       </div>
     </DivIntroduceAbout>
   );
-};
 
 export default IntroduceAbout;
 

@@ -28,8 +28,7 @@ const IntroduceBlogs = (props: Props) => {
           </span>
         </h2>
         <div>
-          {blogSummaries.map((data, index) => {
-            return (
+          {blogSummaries.map((data, index) => (
               <DivItem $color={data.color} key={index}>
                 <div>
                   <span className="date">{data.date}</span>
@@ -39,8 +38,7 @@ const IntroduceBlogs = (props: Props) => {
                   <LinkA href={data.link}>{data.title}</LinkA>
                 </p>
               </DivItem>
-            );
-          })}
+            ))}
         </div>
       </div>
     </DivIntroduceBlogs>

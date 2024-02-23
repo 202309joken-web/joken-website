@@ -1,6 +1,6 @@
 // components/ImageSlider.tsx
 import Image from 'next/image';
-import { useState, useEffect } from 'react';
+import React, { useState, useEffect } from 'react';
 
 interface ImageSliderProps {
   images: string[];
@@ -13,9 +13,9 @@ const ImageSlider: React.FC<ImageSliderProps> = ({
 }) => {
   const [currentIndex, setCurrentIndex] = useState(0);
 
-  const nextSlide = () => {
+  const nextSlide = React.useCallback(() => {
     setCurrentIndex((currentIndex + 1) % images.length);
-  };
+  }, [currentIndex, images.length]);
 
   const prevSlide = () => {
     setCurrentIndex((currentIndex - 1 + images.length) % images.length);
@@ -29,7 +29,7 @@ const ImageSlider: React.FC<ImageSliderProps> = ({
     return () => {
       clearInterval(intervalId);
     };
-  }, [currentIndex]);
+  }, [interval, nextSlide]);
 
   return (
     <div className="image-slider">

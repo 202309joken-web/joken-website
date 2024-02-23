@@ -29,15 +29,13 @@ const Header = () => {
         </LinkLogo>
         <ListHeaderList>
           <Flexul>
-            {headerDatas.map((headerData, index) => {
-              return (
+            {headerDatas.map((headerData, index) => (
                 <HeaderList
                   href={headerData.href}
                   title={headerData.title}
                   key={index}
                 />
-              );
-            })}
+              ))}
           </Flexul>
           <HamMenu headerData={headerDatas} />
         </ListHeaderList>

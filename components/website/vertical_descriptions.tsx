@@ -41,17 +41,15 @@ const VerticalDescriptions = () => {
   return (
     <DivVerticalDescriptions>
       <DivVerticalDescription_container>
-        {arrData.map((data, index) => {
-          return (
-            <VerticalDescription
-              title={data.title}
-              description={data.description}
-              imageSrc={data.imageSrc}
-              imageAlt={data.imageAlt}
-              key={index}
-            />
-          );
-        })}
+        {arrData.map((data, index) => (
+          <VerticalDescription
+            title={data.title}
+            description={data.description}
+            imageSrc={data.imageSrc}
+            imageAlt={data.imageAlt}
+            key={index}
+          />
+        ))}
       </DivVerticalDescription_container>
     </DivVerticalDescriptions>
   );

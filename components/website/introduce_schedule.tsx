@@ -2,8 +2,7 @@
 import Image from 'next/image';
 import styled from 'styled-components';
 
-const IntroduceSchedule = () => {
-  return (
+const IntroduceSchedule = () => (
     <DivIntroduceShcedule>
       <div>
         <div>
@@ -18,20 +17,19 @@ const IntroduceSchedule = () => {
             src="/images/fishing.svg"
             width={100}
             height={100}
-            alt={'釣りをしてる人'}
+            alt="釣りをしてる人"
           />
           <Image
             className="kingyo"
             src="/images/kingyo.svg"
             width={60}
             height={60}
-            alt={'釣りをしてる人'}
+            alt="釣りをしてる人"
           />
         </div>
       </div>
     </DivIntroduceShcedule>
   );
-};
 export default IntroduceSchedule;
 
 const DivIntroduceShcedule = styled.div`

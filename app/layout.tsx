@@ -31,14 +31,12 @@ export const metadata: Metadata = {
   },
 };
 
-const RootLayout = ({ children }: { children: React.ReactNode }) => {
-  return (
+const RootLayout = ({ children }: { children: React.ReactNode }) => (
     <html lang="ja">
       <body>
         <StyledComponentsRegistry>{children}</StyledComponentsRegistry>
       </body>
     </html>
   );
-};
 
 export default RootLayout;

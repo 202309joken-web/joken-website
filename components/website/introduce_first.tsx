@@ -15,7 +15,7 @@ const IntroduceFirst = () => {
           <span>Engineering</span>
         </p>
         <ImageOrigin
-          src={'/images/joken_background.svg'}
+          src="/images/joken_background.svg"
           width={windowWidth}
           height={windowWidth}
           alt="jokenのライン"
