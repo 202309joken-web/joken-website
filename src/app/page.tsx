@@ -3,13 +3,13 @@ import Footer from '../components/commons/Footer/Footer';
 import Header from '../components/commons/Header/Header';
 import IntroduceDescription, {
   IntroDesc,
-} from '@/components/website/IntroduceDescription';
+} from '@/components/domains/website/IntroduceDescription';
 import IntroduceBlogs, {
   BlogSummary,
-} from '@/components/website/IntroduceBlogs';
-import IntroduceFirst from '@/components/website/IntroduceFirst';
-import IntroduceAbout from '@/components/website/IntroduceAbout';
-import IntroduceSchedule from '@/components/website/IntroduceSchedule';
+} from '@/components/domains/website/IntroduceBlogs';
+import IntroduceFirst from '@/components/domains/website/IntroduceFirst';
+import IntroduceAbout from '@/components/domains/website/IntroduceAbout';
+import IntroduceSchedule from '@/components/domains/website/IntroduceSchedule';
 
 export default function Home() {
   const filePath = 'public/json/data.json';

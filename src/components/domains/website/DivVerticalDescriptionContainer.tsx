@@ -1,6 +1,6 @@
 'use client';
 
-import VerticalDescription from '@/components/website/DivVerticalDescription';
+import VerticalDescription from '@/components/domains/website/DivVerticalDescription';
 import { styled } from 'styled-components';
 
 const DivVerticalDescriptions = styled.div`
