@@ -1,4 +1,3 @@
-// components/ImageSlider.tsx
 import Image from 'next/image';
 import React, { useState, useEffect } from 'react';
 

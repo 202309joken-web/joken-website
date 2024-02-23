@@ -1,8 +1,8 @@
 'use client';
 import { useState } from 'react';
-import { HeaderData } from './Header';
 import styled from 'styled-components';
 import Link from 'next/link';
+import { HeaderData } from '@/components/commons/Header/Header';
 
 type Props = {
   headerData: HeaderData[];
@@ -26,10 +26,10 @@ const HamMenu = (props: Props) => {
       <DivHeaderMenu $isOpen={isOpen} onClick={handleBackClick}>
         <ul onClick={(e) => e.stopPropagation()}>
           {headerData.map((data, index) => (
-              <li key={index}>
-                <LinkA href={data.href}>{data.title}</LinkA>
-              </li>
-            ))}
+            <li key={index}>
+              <LinkA href={data.href}>{data.title}</LinkA>
+            </li>
+          ))}
         </ul>
       </DivHeaderMenu>
     </>

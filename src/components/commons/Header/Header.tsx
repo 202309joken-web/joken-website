@@ -1,8 +1,8 @@
 'use client';
 
+import HamMenu from '@/components/commons/Header/HamMenu';
 import Link from 'next/link';
 import { styled } from 'styled-components';
-import HamMenu from './ham_menu';
 
 export type HeaderData = {
   href: string;
@@ -30,12 +30,12 @@ const Header = () => {
         <ListHeaderList>
           <Flexul>
             {headerDatas.map((headerData, index) => (
-                <HeaderList
-                  href={headerData.href}
-                  title={headerData.title}
-                  key={index}
-                />
-              ))}
+              <HeaderList
+                href={headerData.href}
+                title={headerData.title}
+                key={index}
+              />
+            ))}
           </Flexul>
           <HamMenu headerData={headerDatas} />
         </ListHeaderList>

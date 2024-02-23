@@ -1,14 +1,14 @@
 'use client';
 
+import VerticalDescription from '@/components/domains/website/DivVerticalDescription';
 import { styled } from 'styled-components';
-import VerticalDescription from './vertical_description';
 
 const DivVerticalDescriptions = styled.div`
   padding: 60px 0;
   background: #eee;
 `;
 
-const DivVerticalDescription_container = styled.div`
+const DivVerticalDescriptionContainer = styled.div`
   background: #eee;
   display: flex;
   max-width: 900px;
@@ -40,7 +40,7 @@ const VerticalDescriptions = () => {
 
   return (
     <DivVerticalDescriptions>
-      <DivVerticalDescription_container>
+      <DivVerticalDescriptionContainer>
         {arrData.map((data, index) => (
           <VerticalDescription
             title={data.title}
@@ -50,7 +50,7 @@ const VerticalDescriptions = () => {
             key={index}
           />
         ))}
-      </DivVerticalDescription_container>
+      </DivVerticalDescriptionContainer>
     </DivVerticalDescriptions>
   );
 };

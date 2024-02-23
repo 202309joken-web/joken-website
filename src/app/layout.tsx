@@ -1,6 +1,6 @@
 import type { Metadata } from 'next';
 // import { Inter } from "next/font/google";
-import '/styles/globals.scss';
+import '../styles/globals.scss';
 import StyledComponentsRegistry from '../lib/registry';
 
 // const inter = Inter({ subsets: ["latin"] });
@@ -32,11 +32,11 @@ export const metadata: Metadata = {
 };
 
 const RootLayout = ({ children }: { children: React.ReactNode }) => (
-    <html lang="ja">
-      <body>
-        <StyledComponentsRegistry>{children}</StyledComponentsRegistry>
-      </body>
-    </html>
-  );
+  <html lang="ja">
+    <body>
+      <StyledComponentsRegistry>{children}</StyledComponentsRegistry>
+    </body>
+  </html>
+);
 
 export default RootLayout;
