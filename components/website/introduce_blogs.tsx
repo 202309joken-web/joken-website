@@ -1,6 +1,6 @@
-"use client";
-import styled from "styled-components";
-import Link from "next/link";
+'use client';
+import styled from 'styled-components';
+import Link from 'next/link';
 
 export type BlogSummary = {
   date: string;
@@ -113,18 +113,18 @@ const SpanBlue = styled.span`
 const LinkA = styled(Link)`
   color: #000;
   font-family:
-    "Montserrat",
+    'Montserrat',
     -apple-system,
     BlinkMacSystemFont,
-    "Segoe UI",
+    'Segoe UI',
     Roboto,
-    "Helvetica Neue",
+    'Helvetica Neue',
     Arial,
     sans-serif,
-    "Apple Color Emoji",
-    "Segoe UI Emoji",
-    "Segoe UI Symbol",
-    "Noto Color Emoji";
+    'Apple Color Emoji',
+    'Segoe UI Emoji',
+    'Segoe UI Symbol',
+    'Noto Color Emoji';
 
   &:hover {
     color: var(--color_theme_joken);

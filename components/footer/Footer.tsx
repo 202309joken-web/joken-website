@@ -1,7 +1,7 @@
-"use client";
+'use client';
 
-import Link from "next/link";
-import { styled } from "styled-components";
+import Link from 'next/link';
+import { styled } from 'styled-components';
 
 const FooterElement = styled.footer`
   display: flex;
@@ -11,13 +11,13 @@ const FooterElement = styled.footer`
 `;
 
 const FooterLeft = styled.div`
-padding-left: 40px;
+  padding-left: 40px;
   & > div {
     padding: 40px 0;
   }
 
   & > p {
-    padding-bottom: 40px; 
+    padding-bottom: 40px;
   }
 `;
 
@@ -40,7 +40,7 @@ const FooterRight = styled.div`
 const PJokenIcon = styled.p`
   font-style: italic;
   font-size: 64px;
-  line-height:64px;
+  line-height: 64px;
   & span {
     color: var(--color_theme_joken);
   }
@@ -53,36 +53,41 @@ const PJokenSummary = styled.p`
 
 const PJokenCopyright = styled.p`
   font-size: 10px;
-`
+`;
 
 const Footer = () => {
-  return (<>
-    <FooterElement>
-      <FooterLeft>
-        <div>
-          <PJokenIcon>
-            <span>J</span>
-            oken
-          </PJokenIcon>
-          <PJokenSummary>college of engineering</PJokenSummary>
-        </div>
-        <PJokenCopyright>&copy; 2023 Joken. All rights reserved.</PJokenCopyright>
-      </FooterLeft>
+  return (
+    <>
+      <FooterElement>
+        <FooterLeft>
+          <div>
+            <PJokenIcon>
+              <span>J</span>
+              oken
+            </PJokenIcon>
+            <PJokenSummary>college of engineering</PJokenSummary>
+          </div>
+          <PJokenCopyright>
+            &copy; 2023 Joken. All rights reserved.
+          </PJokenCopyright>
+        </FooterLeft>
 
-      <FooterRight>
-        <div>
-          <Link href="/">HOME</Link>
-          <a href="">about us</a>
-          <a href="">blog</a>
-          <a href="">contact</a>
-          <a href="https://twitter.com/nuce_joken" target="_blank">X(Twitter)</a>
-        </div>
-      </FooterRight>
-    </FooterElement>
-  </>);
-}
+        <FooterRight>
+          <div>
+            <Link href="/">HOME</Link>
+            <a href="">about us</a>
+            <a href="">blog</a>
+            <a href="">contact</a>
+            <a href="https://twitter.com/nuce_joken" target="_blank">
+              X(Twitter)
+            </a>
+          </div>
+        </FooterRight>
+      </FooterElement>
+    </>
+  );
+};
 
+export default Footer;
 
-export default Footer
-
-// const DivLeft 
+// const DivLeft

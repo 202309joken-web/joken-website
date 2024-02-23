@@ -1,6 +1,6 @@
 // components/ImageSlider.tsx
-import Image from "next/image";
-import { useState, useEffect } from "react";
+import Image from 'next/image';
+import { useState, useEffect } from 'react';
 
 interface ImageSliderProps {
   images: string[];

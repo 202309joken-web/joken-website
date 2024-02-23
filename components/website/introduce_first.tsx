@@ -1,11 +1,11 @@
-"use client";
+'use client';
 
-import Image from "next/image";
-import { styled } from "styled-components";
+import Image from 'next/image';
+import { styled } from 'styled-components';
 
 const IntroduceFirst = () => {
   const windowWidth =
-    typeof window !== "undefined" ? window.innerWidth * 1.2 : 1000;
+    typeof window !== 'undefined' ? window.innerWidth * 1.2 : 1000;
   return (
     <DivIntroduceFirst>
       <DivWrap>
@@ -15,7 +15,7 @@ const IntroduceFirst = () => {
           <span>Engineering</span>
         </p>
         <ImageOrigin
-          src={"/images/joken_background.svg"}
+          src={'/images/joken_background.svg'}
           width={windowWidth}
           height={windowWidth}
           alt="jokenのライン"
@@ -78,7 +78,7 @@ const ImageOrigin = styled(Image)`
 
 const SpanBackground = styled.span`
   display: inline-block;
-  content: "";
+  content: '';
   width: 120%;
   height: 300%;
   position: absolute;

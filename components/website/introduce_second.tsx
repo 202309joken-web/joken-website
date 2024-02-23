@@ -1,13 +1,13 @@
-"use client";
+'use client';
 
-import { styled } from "styled-components";
-import ImageSlider from "./ImageSlider";
+import { styled } from 'styled-components';
+import ImageSlider from './ImageSlider';
 
 const IntroduceSecond = () => {
   const images = [
-    "/images/myself_2022-04-22.jpg",
-    "/images/joken_background.svg",
-    "/vercel.svg",
+    '/images/myself_2022-04-22.jpg',
+    '/images/joken_background.svg',
+    '/vercel.svg',
   ];
   return (
     <DivMain>

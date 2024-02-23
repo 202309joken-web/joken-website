@@ -1,7 +1,7 @@
-"use client";
+'use client';
 
-import { styled } from "styled-components";
-import VerticalDescription from "./vertical_description";
+import { styled } from 'styled-components';
+import VerticalDescription from './vertical_description';
 
 const DivVerticalDescriptions = styled.div`
   padding: 60px 0;
@@ -19,22 +19,22 @@ const DivVerticalDescription_container = styled.div`
 const VerticalDescriptions = () => {
   const arrData = [
     {
-      title: "サンプルタイトル",
-      description: "こんにちは今回はタイピング練習をしていこうと思います。",
-      imageSrc: "/images/myself_2022-04-22.jpg",
-      imageAlt: "俺や",
+      title: 'サンプルタイトル',
+      description: 'こんにちは今回はタイピング練習をしていこうと思います。',
+      imageSrc: '/images/myself_2022-04-22.jpg',
+      imageAlt: '俺や',
     },
     {
-      title: "サンプルタイトル",
-      description: "こんにちは今回はタイピング練習をしていこうと思います。",
-      imageSrc: "/images/myself_2022-04-22.jpg",
-      imageAlt: "俺や",
+      title: 'サンプルタイトル',
+      description: 'こんにちは今回はタイピング練習をしていこうと思います。',
+      imageSrc: '/images/myself_2022-04-22.jpg',
+      imageAlt: '俺や',
     },
     {
-      title: "サンプルタイトル",
-      description: "こんにちは今回はタイピング練習をしていこうと思います。",
-      imageSrc: "/images/myself_2022-04-22.jpg",
-      imageAlt: "俺や",
+      title: 'サンプルタイトル',
+      description: 'こんにちは今回はタイピング練習をしていこうと思います。',
+      imageSrc: '/images/myself_2022-04-22.jpg',
+      imageAlt: '俺や',
     },
   ];
 

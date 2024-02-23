@@ -1,8 +1,8 @@
-"use client";
+'use client';
 
-import Link from "next/link";
-import { styled } from "styled-components";
-import HamMenu from "./ham_menu";
+import Link from 'next/link';
+import { styled } from 'styled-components';
+import HamMenu from './ham_menu';
 
 export type HeaderData = {
   href: string;
@@ -11,10 +11,10 @@ export type HeaderData = {
 
 const Header = () => {
   const headerDatas: HeaderData[] = [
-    { href: "/", title: "HOME" },
-    { href: "/#about", title: "サークル概要" },
-    { href: "/record", title: "活動記録" },
-    { href: "/sns", title: "SNS" },
+    { href: '/', title: 'HOME' },
+    { href: '/#about', title: 'サークル概要' },
+    { href: '/record', title: '活動記録' },
+    { href: '/sns', title: 'SNS' },
   ];
 
   return (
@@ -72,18 +72,18 @@ const LinkLogo = styled(Link)`
   height: var(--len__header__height);
   padding: 0 20px;
   font-family:
-    "Montserrat",
+    'Montserrat',
     -apple-system,
     BlinkMacSystemFont,
-    "Segoe UI",
+    'Segoe UI',
     Roboto,
-    "Helvetica Neue",
+    'Helvetica Neue',
     Arial,
     sans-serif,
-    "Apple Color Emoji",
-    "Segoe UI Emoji",
-    "Segoe UI Symbol",
-    "Noto Color Emoji";
+    'Apple Color Emoji',
+    'Segoe UI Emoji',
+    'Segoe UI Symbol',
+    'Noto Color Emoji';
   color: black;
   &:hover {
     opacity: 0.5;
@@ -112,18 +112,18 @@ const LinkA = styled(Link)`
   display: inline-block;
   line-height: var(--len__header__height);
   font-family:
-    "Montserrat",
+    'Montserrat',
     -apple-system,
     BlinkMacSystemFont,
-    "Segoe UI",
+    'Segoe UI',
     Roboto,
-    "Helvetica Neue",
+    'Helvetica Neue',
     Arial,
     sans-serif,
-    "Apple Color Emoji",
-    "Segoe UI Emoji",
-    "Segoe UI Symbol",
-    "Noto Color Emoji";
+    'Apple Color Emoji',
+    'Segoe UI Emoji',
+    'Segoe UI Symbol',
+    'Noto Color Emoji';
 
   &:hover {
     color: var(--color_theme_joken);

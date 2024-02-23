@@ -1,6 +1,6 @@
-"use client";
-import Image from "next/image";
-import styled from "styled-components";
+'use client';
+import Image from 'next/image';
+import styled from 'styled-components';
 
 const IntroduceAbout = () => {
   return (
@@ -86,7 +86,7 @@ const DivIntroduceAbout = styled.div`
         z-index: -1;
       }
       &::before {
-        content: "";
+        content: '';
         position: absolute;
         bottom: -40px;
         left: -40px;

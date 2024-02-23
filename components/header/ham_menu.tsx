@@ -1,8 +1,8 @@
-"use client";
-import { useState } from "react";
-import { HeaderData } from "./Header";
-import styled from "styled-components";
-import Link from "next/link";
+'use client';
+import { useState } from 'react';
+import { HeaderData } from './Header';
+import styled from 'styled-components';
+import Link from 'next/link';
 
 type Props = {
   headerData: HeaderData[];
@@ -62,7 +62,7 @@ const DivHamMenu = styled.div<{ $isOpen: boolean }>`
     transition: 0.3s;
     &::before,
     &::after {
-      content: "";
+      content: '';
       position: absolute;
       width: 100%;
       height: 2px;
@@ -79,15 +79,15 @@ const DivHamMenu = styled.div<{ $isOpen: boolean }>`
     }
     ${(props) =>
       props.$isOpen
-        ? "transform: rotate(45deg);\
+        ? 'transform: rotate(45deg);\
     &::before {transform: rotate(90deg); top: 0}\
-    &::after {top: 0}"
-        : ""}
+    &::after {top: 0}'
+        : ''}
   }
 `;
 
 const DivHeaderMenu = styled.div<{ $isOpen: boolean }>`
-  display: ${(props) => (props.$isOpen ? "flex" : "none")};
+  display: ${(props) => (props.$isOpen ? 'flex' : 'none')};
   position: fixed;
   top: var(--len__header__height);
   right: 0;
@@ -110,18 +110,18 @@ const LinkA = styled(Link)`
   display: inline-block;
   line-height: var(--len__header__height);
   font-family:
-    "Montserrat",
+    'Montserrat',
     -apple-system,
     BlinkMacSystemFont,
-    "Segoe UI",
+    'Segoe UI',
     Roboto,
-    "Helvetica Neue",
+    'Helvetica Neue',
     Arial,
     sans-serif,
-    "Apple Color Emoji",
-    "Segoe UI Emoji",
-    "Segoe UI Symbol",
-    "Noto Color Emoji";
+    'Apple Color Emoji',
+    'Segoe UI Emoji',
+    'Segoe UI Symbol',
+    'Noto Color Emoji';
 
   &:hover {
     color: var(--color_theme_joken);

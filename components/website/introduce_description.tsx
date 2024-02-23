@@ -1,6 +1,6 @@
-"use client";
-import Image from "next/image";
-import styled from "styled-components";
+'use client';
+import Image from 'next/image';
+import styled from 'styled-components';
 
 type Props = {
   isTextLeft: boolean;
@@ -16,7 +16,7 @@ export type IntroDesc = {
 
 const IntroduceDescription = (props: Props) => {
   const isTextLeft = props.isTextLeft;
-  const textClass = isTextLeft ? "text left" : "text";
+  const textClass = isTextLeft ? 'text left' : 'text';
   const blogData = props.blogData;
   return (
     <DivIntroduceDescription>
@@ -93,7 +93,7 @@ const DivIntroduceDescription = styled.div`
           & span {
             position: absolute;
             background: #c57033;
-            content: "";
+            content: '';
             &.left {
               &_0 {
                 width: 6px;

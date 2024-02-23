@@ -8,6 +8,7 @@
     "start": "next start",
     "lint": "next lint --max-warnings=0",
     "lint:fix": "next lint",
+    "prettier": "prettier --write --ignore-path .gitignore './**/*.{js,jsx,ts,tsx,json,css}'",
     "prepare": "husky install"
   },
   "lint-staged": {
