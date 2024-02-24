@@ -7,7 +7,7 @@ import IntroduceDescription, {
 import IntroduceBlogs, {
   BlogSummary,
 } from '@/components/domains/website/IntroduceBlogs';
-import IntroduceAbout from '@/components/domains/website/IntroduceAbout';
+import { IntroduceAbout } from '@/components/domains/website/IntroduceAbout';
 import IntroduceSchedule from '@/components/domains/website/IntroduceSchedule';
 import { IntroduceTop } from '@/components/domains/website/IntroduceTop';
 
