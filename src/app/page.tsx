@@ -7,9 +7,9 @@ import IntroduceDescription, {
 import IntroduceBlogs, {
   BlogSummary,
 } from '@/components/domains/website/IntroduceBlogs';
-import IntroduceFirst from '@/components/domains/website/IntroduceFirst';
 import IntroduceAbout from '@/components/domains/website/IntroduceAbout';
 import IntroduceSchedule from '@/components/domains/website/IntroduceSchedule';
+import { IntroduceTop } from '@/components/domains/website/IntroduceTop';
 
 export default function Home() {
   const filePath = 'public/json/data.json';
@@ -22,7 +22,7 @@ export default function Home() {
     <>
       <Header />
       <main>
-        <IntroduceFirst />
+        <IntroduceTop />
         <IntroduceAbout />
         <IntroduceSchedule />
         {introDesc.map((v, index) => (

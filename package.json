@@ -12,28 +12,32 @@
     "prepare": "husky install"
   },
   "dependencies": {
+    "@emotion/react": "^11.11.3",
+    "@emotion/styled": "^11.11.0",
+    "@mui/icons-material": "^5.15.10",
+    "@mui/material": "^5.15.10",
+    "@types/styled-components": "^5.1.34",
     "next": "^14.0.4",
     "react": "18.2.0",
     "react-dom": "18.2.0",
-    "@types/styled-components": "^5.1.34",
     "styled-components": "^6.1.1"
   },
   "devDependencies": {
-    "@typescript-eslint/eslint-plugin": "^6.13.2",
-    "autoprefixer": "10.4.16",
-    "postcss": "8.4.32",
-    "eslint": "8.55.0",
-    "eslint-config-next": "14.0.4",
-    "eslint-plugin": "^1.0.1",
-    "tailwindcss": "3.3.6",
-    "typescript": "5.3.3",
-    "sass": "^1.69.5",
     "@types/node": "20.10.4",
     "@types/react": "18.2.42",
     "@types/react-dom": "18.2.17",
+    "@typescript-eslint/eslint-plugin": "^6.13.2",
+    "autoprefixer": "10.4.16",
+    "eslint": "8.55.0",
+    "eslint-config-next": "14.0.4",
     "eslint-config-prettier": "^9.1.0",
+    "eslint-plugin": "^1.0.1",
     "husky": "^8.0.3",
     "lint-staged": "^15.2.0",
-    "prettier": "^3.1.0"
+    "postcss": "8.4.32",
+    "prettier": "^3.1.0",
+    "sass": "^1.69.5",
+    "tailwindcss": "3.3.6",
+    "typescript": "5.3.3"
   }
 }
