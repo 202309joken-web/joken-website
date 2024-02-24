@@ -1,6 +1,4 @@
 import fs from 'fs';
-import Footer from '../components/commons/Footer/Footer';
-import Header from '../components/commons/Header/Header';
 import IntroduceDescription, {
   IntroDesc,
 } from '@/components/domains/website/IntroduceDescription';
@@ -8,8 +6,10 @@ import IntroduceBlogs, {
   BlogSummary,
 } from '@/components/domains/website/IntroduceBlogs';
 import { IntroduceAbout } from '@/components/domains/website/IntroduceAbout';
-import IntroduceSchedule from '@/components/domains/website/IntroduceSchedule';
+import { IntroduceSchedule } from '@/components/domains/website/IntroduceSchedule';
 import { IntroduceTop } from '@/components/domains/website/IntroduceTop';
+import Header from '@/components/commons/Header/Header';
+import Footer from '@/components/commons/Footer/Footer';
 
 export default function Home() {
   const filePath = 'public/json/data.json';
