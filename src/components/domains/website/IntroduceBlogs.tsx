@@ -1,3 +1,4 @@
+'use client';
 import { Box, Button, Chip, Divider, Typography } from '@mui/material';
 
 export interface BlogSummary {
@@ -35,11 +36,13 @@ export const IntroduceBlogs = (props: Props) => (
       <Box>
         {props.blogSummaries.map((data, index) => (
           <Box
-            my={3}
+            pb={2}
+            my={2}
             key={index}
             display={'flex'}
             justifyContent={'space-between'}
             alignItems={'center'}
+            borderBottom={(theme) => `1px solid ${theme.palette.divider}`}
           >
             <Box
               width={{ xs: 110, sm: 'auto' }}
