@@ -59,8 +59,9 @@ export const IntroduceDescription: React.FC<IntroduceDescriptionProps> = (
             src={props.blogData.image}
             width={300}
             height={200}
+            priority={true}
             alt={props.blogData.alt}
-            style={{ width: '100%', objectFit: 'cover' }}
+            style={{ width: '100%', height: 'auto', objectFit: 'cover' }}
           />
         </Box>
       </Box>
