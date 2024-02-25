@@ -10,7 +10,7 @@ import {
 import { IntroduceAbout } from '@/components/domains/website/IntroduceAbout';
 import { IntroduceSchedule } from '@/components/domains/website/IntroduceSchedule';
 import { IntroduceTop } from '@/components/domains/website/IntroduceTop';
-import Header from '@/components/commons/Header/Header';
+import { Header } from '@/components/commons/Header/Header';
 import Footer from '@/components/commons/Footer/Footer';
 
 export default function Home() {

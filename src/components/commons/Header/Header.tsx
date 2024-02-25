@@ -1,151 +1,83 @@
 'use client';
 
 import HamMenu from '@/components/commons/Header/HamMenu';
-import Link from 'next/link';
-import { styled } from 'styled-components';
+import { Box, Button, Typography, styled } from '@mui/material';
 
-export type HeaderData = {
+export interface HeaderData {
   href: string;
   title: string;
-};
+}
 
-const Header = () => {
-  const headerDatas: HeaderData[] = [
-    { href: '/', title: 'HOME' },
-    { href: '/#about', title: 'サークル概要' },
-    { href: '/record', title: '活動記録' },
-    { href: '/sns', title: 'SNS' },
-  ];
+const headerDatas: HeaderData[] = [
+  { href: '/', title: 'HOME' },
+  { href: '/#about', title: 'サークル概要' },
+  { href: '/record', title: '活動記録' },
+  { href: '/sns', title: 'SNS' },
+];
 
-  return (
-    <HeaderElement>
-      <div>
-        <LinkLogo href="/">
-          <i>
-            <b>
-              <SpanBlue>J</SpanBlue>oken
-            </b>
-          </i>
-        </LinkLogo>
-        <ListHeaderList>
-          <Flexul>
-            {headerDatas.map((headerData, index) => (
-              <HeaderList
-                href={headerData.href}
-                title={headerData.title}
-                key={index}
-              />
-            ))}
-          </Flexul>
-          <HamMenu headerData={headerDatas} />
-        </ListHeaderList>
-      </div>
-    </HeaderElement>
-  );
-};
+export const Header = () => (
+  <Box
+    height={'var(--len__header__height)'}
+    position={'fixed'}
+    display={'flex'}
+    justifyContent={'center'}
+    zIndex={999}
+    width={'100%'}
+  >
+    <Box
+      display={'flex'}
+      justifyContent={'space-between'}
+      width={'100%'}
+      maxWidth={1380}
+      bgcolor={'white'}
+    >
+      {/* 左側のJokenロゴボタン */}
+      <Typography component={Button} href="/">
+        <TypographyLogo color="joken">J</TypographyLogo>
+        <TypographyLogo color="text.primary">oken</TypographyLogo>
+      </Typography>
 
-export default Header;
+      <Box
+        component={'nav'}
+        display={{ xs: 'none', sm: 'flex' }}
+        alignItems={'center'}
+        justifyContent={'center'}
+      >
+        {headerDatas.map((headerData, index) => (
+          <Typography
+            p={2}
+            component={Button}
+            href={headerData.href}
+            key={index}
+            color={'text.primary'}
+          >
+            {headerData.title}
+          </Typography>
+        ))}
+      </Box>
+      <HamMenu headerData={headerDatas} />
+    </Box>
+  </Box>
+);
 
-// <header>要素
-const HeaderElement = styled.header`
-  height: var(--len__header__height);
-  position: fixed;
-  width: 100%;
-  display: flex;
-  justify-content: center;
-  z-index: 999;
-  & > div {
-    display: flex;
-    justify-content: space-between;
-    width: 100%;
-    max-width: 1380px;
-    background: white;
-  }
-`;
-
-// Jokenロゴ要素（リンク）
-const LinkLogo = styled(Link)`
-  font-size: 40px;
-  line-height: var(--len__header__height);
-  height: var(--len__header__height);
-  padding: 0 20px;
-  font-family:
-    'Montserrat',
-    -apple-system,
-    BlinkMacSystemFont,
-    'Segoe UI',
-    Roboto,
-    'Helvetica Neue',
-    Arial,
-    sans-serif,
-    'Apple Color Emoji',
-    'Segoe UI Emoji',
-    'Segoe UI Symbol',
-    'Noto Color Emoji';
-  color: black;
-  &:hover {
-    opacity: 0.5;
-  }
-`;
-
-// 青
-const SpanBlue = styled.span`
-  color: var(--color_theme_joken);
-`;
-
-const ListHeaderList = styled.nav`
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-`;
-
-const TabList = styled.li`
-  list-style: none;
-`;
-
-const LinkA = styled(Link)`
-  padding: 0 30px;
-  color: #000;
-  font-size: 1.3rem;
-  display: inline-block;
-  line-height: var(--len__header__height);
-  font-family:
-    'Montserrat',
-    -apple-system,
-    BlinkMacSystemFont,
-    'Segoe UI',
-    Roboto,
-    'Helvetica Neue',
-    Arial,
-    sans-serif,
-    'Apple Color Emoji',
-    'Segoe UI Emoji',
-    'Segoe UI Symbol',
-    'Noto Color Emoji';
-
-  &:hover {
-    color: var(--color_theme_joken);
-  }
-`;
-
-const Flexul = styled.ul`
-  display: flex;
-  @media screen and (max-width: 767px) {
-    display: none;
-  }
-`;
-
-type HeaderListProps = {
-  href: string;
-  title: string;
-};
-
-const HeaderList = (props: HeaderListProps) => {
-  const href = props.href;
-  const title = props.title;
-  return (
-    <TabList>
-      <LinkA href={href}>{title}</LinkA>
-    </TabList>
-  );
-};
+/** 左側 ロゴ部分の共通テキストパーツ */
+const TypographyLogo = styled(Typography)(() => ({
+  fontSize: 40,
+  fontFamily: `
+  'Montserrat',
+  -apple-system,
+  BlinkMacSystemFont,
+  'Segoe UI',
+  Roboto,
+  'Helvetica Neue',
+  Arial,
+  sans-serif,
+  'Apple Color Emoji',
+  'Segoe UI Emoji',
+  'Segoe UI Symbol',
+  'Noto Color Emoji'
+  `,
+  fontWeight: 'bold',
+  fontStyle: 'italic',
+  textTransform: 'none',
+}));
