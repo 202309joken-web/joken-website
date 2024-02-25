@@ -1,6 +1,6 @@
 'use client';
 
-import HamMenu from '@/components/commons/Header/HamMenu';
+import { HamMenu } from '@/components/commons/Header/HamMenu';
 import { Box, Button, Typography, styled } from '@mui/material';
 
 export interface HeaderData {
