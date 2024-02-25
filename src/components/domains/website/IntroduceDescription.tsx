@@ -71,13 +71,16 @@ export const IntroduceDescription: React.FC<IntroduceDescriptionProps> = (
           variant="h4"
           fontWeight={'bold'}
           py={1}
-          mb={{ xs: 2, sm: 0 }}
           align="center"
         >
           {props.blogData.title}
         </Typography>
         <Divider
-          sx={{ borderColor: (theme) => theme.palette.joken, borderWidth: 5 }}
+          sx={{
+            mb: { xs: 2, sm: 0 },
+            borderColor: (theme) => theme.palette.joken,
+            borderWidth: 5,
+          }}
         />
         <Typography p={2}>{props.blogData.desc}</Typography>
       </Box>
