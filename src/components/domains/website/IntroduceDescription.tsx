@@ -1,142 +1,93 @@
 'use client';
+
+import { Box, Divider, Typography, styled } from '@mui/material';
 import Image from 'next/image';
-import styled from 'styled-components';
+import React from 'react';
 
-type Props = {
+interface IntroduceDescriptionProps {
   isTextLeft: boolean;
-  blogData: IntroDesc;
-};
+  blogData: IntroDescription;
+}
 
-export type IntroDesc = {
+export interface IntroDescription {
   title: string;
   desc: string;
   image: string;
   alt: string;
-};
+}
 
-const IntroduceDescription = (props: Props) => {
-  const isTextLeft = props.isTextLeft;
-  const textClass = isTextLeft ? 'text left' : 'text';
-  const blogData = props.blogData;
-  return (
-    <DivIntroduceDescription>
-      <div>
-        <div className="image">
-          <div>
-            <span className="left_0"></span>
-            <span className="left_1"></span>
-            <span className="right_0"></span>
-            <span className="right_1"></span>
-            <span className="top"></span>
-            <span className="bottom"></span>
-            <Image
-              src={blogData.image}
-              width={2000}
-              height={1600}
-              alt={blogData.alt}
-            />
-          </div>
-        </div>
-        <div className={textClass}>
-          <h3>{blogData.title}</h3>
-          <p>{blogData.desc}</p>
-        </div>
-      </div>
-    </DivIntroduceDescription>
-  );
-};
+export const IntroduceDescription: React.FC<IntroduceDescriptionProps> = (
+  props
+) => (
+  <Box maxWidth={1500} my={4} mx="auto" display="flex" justifyContent="center">
+    <Box
+      display="flex"
+      justifyContent="center"
+      flexWrap="wrap"
+      width="90%"
+      borderBottom="2px dashed #8ad3f2"
+      py={10}
+    >
+      <Box
+        m={5}
+        display="flex"
+        justifyContent={'center'}
+        alignItems="center"
+        flex={1}
+        minWidth={320}
+      >
+        <Box display="flex" position="relative" flex={1} minWidth={320}>
+          <TypographyLine width={6} height="140%" top={'-14%'} left={-12} />
+          <TypographyLine width={6} height="140%" top={'-22%'} left={0} />
+          <TypographyLine width={3} height="140%" top={'-12%'} right={0} />
+          <TypographyLine width={3} height="140%" top={'-8%'} right={-8} />
+          <TypographyLine
+            width={'calc(100% + 12px + 8px)'}
+            height={14}
+            top={-14}
+            left={-12}
+            right={-8}
+          />
+          <TypographyLine
+            width={'calc(100% + 12px + 8px)'}
+            height={14}
+            bottom={-14}
+            left={-12}
+            right={-8}
+          />
+          <Image
+            src={props.blogData.image}
+            width={300}
+            height={200}
+            priority={true}
+            alt={props.blogData.alt}
+            style={{ width: '100%', height: 'auto', objectFit: 'cover' }}
+          />
+        </Box>
+      </Box>
+      <Box order={props.isTextLeft ? -1 : 0} flex={1} minWidth={320}>
+        <Typography
+          component="h3"
+          variant="h4"
+          fontWeight={'bold'}
+          py={1}
+          mb={{ xs: 2, sm: 0 }}
+          align="center"
+        >
+          {props.blogData.title}
+        </Typography>
+        <Divider
+          sx={{ borderColor: (theme) => theme.palette.joken, borderWidth: 5 }}
+        />
+        <Typography p={2}>{props.blogData.desc}</Typography>
+      </Box>
+    </Box>
+  </Box>
+);
 
-export default IntroduceDescription;
-
-const DivIntroduceDescription = styled.div`
-  max-width: 1500px;
-  margin: 100px auto;
-  display: flex;
-  justify-content: center;
-  & > div {
-    display: flex;
-    justify-content: center;
-    flex-wrap: wrap;
-    width: 90%;
-    border-bottom: 2px dashed #8ad3f2;
-    padding-bottom: 100px;
-    & > div {
-      flex: 1;
-      min-width: 320px;
-      &.text {
-        text-align: center;
-        padding: 4%;
-        &.left {
-          order: -1;
-        }
-        & h3 {
-          font-size: 34px;
-          line-height: 70px;
-          border-bottom: 5px solid #8ad3f2;
-          margin-bottom: 30px;
-        }
-      }
-      &.image {
-        margin: 20px;
-        /* background: #b46a3f; */
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        & > div {
-          display: flex;
-          position: relative;
-          & img {
-            object-fit: cover;
-            width: 300px;
-            height: 200px;
-          }
-          & span {
-            position: absolute;
-            background: #c57033;
-            content: '';
-            &.left {
-              &_0 {
-                width: 6px;
-                height: 140%;
-                top: -14%;
-                left: -12px;
-              }
-              &_1 {
-                width: 6px;
-                height: 140%;
-                top: -22%;
-                left: 0;
-              }
-            }
-            &.right {
-              &_0 {
-                width: 3px;
-                height: 140%;
-                top: -12%;
-                right: 0;
-              }
-              &_1 {
-                width: 3px;
-                height: 140%;
-                top: -8%;
-                right: -8px;
-              }
-            }
-            &.top {
-              width: calc(100% + 12px + 8px);
-              height: 14px;
-              top: -14px;
-              left: -12px;
-            }
-            &.bottom {
-              width: calc(100% + 12px + 8px);
-              height: 14px;
-              bottom: -14px;
-              left: -12px;
-            }
-          }
-        }
-      }
-    }
-  }
-`;
+/** 茶色線の共通パーツ */
+const TypographyLine = styled(Typography)(() => ({
+  position: 'absolute',
+  background: '#c57033',
+  content: '""',
+}));

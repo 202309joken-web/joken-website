@@ -1,28 +1,30 @@
 import fs from 'fs';
-import Footer from '../components/commons/Footer/Footer';
-import Header from '../components/commons/Header/Header';
-import IntroduceDescription, {
-  IntroDesc,
+import {
+  IntroduceDescription,
+  IntroDescription,
 } from '@/components/domains/website/IntroduceDescription';
-import IntroduceBlogs, {
+import {
+  IntroduceBlogs,
   BlogSummary,
 } from '@/components/domains/website/IntroduceBlogs';
-import IntroduceFirst from '@/components/domains/website/IntroduceFirst';
-import IntroduceAbout from '@/components/domains/website/IntroduceAbout';
-import IntroduceSchedule from '@/components/domains/website/IntroduceSchedule';
+import { IntroduceAbout } from '@/components/domains/website/IntroduceAbout';
+import { IntroduceSchedule } from '@/components/domains/website/IntroduceSchedule';
+import { IntroduceTop } from '@/components/domains/website/IntroduceTop';
+import { Header } from '@/components/commons/Header/Header';
+import { Footer } from '@/components/commons/Footer/Footer';
 
 export default function Home() {
   const filePath = 'public/json/data.json';
   const data = JSON.parse(fs.readFileSync(filePath, 'utf-8'));
 
-  const introDesc: IntroDesc[] = data.introDesc;
+  const introDesc: IntroDescription[] = data.introDesc;
   const blogSummaries: BlogSummary[] = data.blogSummary;
 
   return (
     <>
       <Header />
       <main>
-        <IntroduceFirst />
+        <IntroduceTop />
         <IntroduceAbout />
         <IntroduceSchedule />
         {introDesc.map((v, index) => (

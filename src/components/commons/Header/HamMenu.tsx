@@ -1,127 +1,106 @@
 'use client';
-import { useState } from 'react';
-import styled from 'styled-components';
-import Link from 'next/link';
+import React, { useState } from 'react';
 import { HeaderData } from '@/components/commons/Header/Header';
+import {
+  Box,
+  Button,
+  Dialog,
+  DialogTitle,
+  Slide,
+  Typography,
+} from '@mui/material';
+import { TransitionProps } from '@mui/material/transitions';
 
-type Props = {
+interface HamMenuProps {
   headerData: HeaderData[];
-};
-const HamMenu = (props: Props) => {
+}
+export const HamMenu: React.FC<HamMenuProps> = (props) => {
   const [isOpen, setIsOpen] = useState<boolean>(false);
 
   const handleClick = () => {
     setIsOpen(!isOpen);
   };
 
-  const handleBackClick = () => {
+  const handleClose = () => {
     setIsOpen(false);
   };
   const headerData = props.headerData;
   return (
     <>
-      <DivHamMenu $isOpen={isOpen} onClick={handleClick}>
-        <span></span>
-      </DivHamMenu>
-      <DivHeaderMenu $isOpen={isOpen} onClick={handleBackClick}>
-        <ul onClick={(e) => e.stopPropagation()}>
-          {headerData.map((data, index) => (
-            <li key={index}>
-              <LinkA href={data.href}>{data.title}</LinkA>
-            </li>
+      {/* ハンバーガーメニュー */}
+      <Typography
+        component={Button}
+        position="relative"
+        width="var(--len__header__height)"
+        height="var(--len__header__height)"
+        onClick={handleClick}
+        color={'inherit'}
+        display={{ xs: 'inline-flex', sm: 'none' }}
+      >
+        <Typography
+          bgcolor="black"
+          component={'span'}
+          width="70%"
+          height={2}
+          position="relative"
+          sx={{
+            transition: '0.3s',
+            transform: isOpen ? 'rotate(45deg)' : 'none',
+            '&::before, &::after': {
+              content: '""',
+              position: 'absolute',
+              width: '100%',
+              height: 2,
+              background: 'black',
+              transition: '0.3s',
+              left: 0,
+              transformOrigin: 'center center',
+            },
+            '&::before': {
+              top: isOpen ? 0 : -16,
+              transform: isOpen ? 'rotate(90deg)' : 'none',
+            },
+            '&::after': {
+              top: isOpen ? 0 : 16,
+            },
+          }}
+        />
+      </Typography>
+
+      {/* ダイアログメニュー（ハンバーガーメニュー起動時有効） */}
+      <Dialog
+        TransitionComponent={Transition}
+        open={isOpen}
+        onClose={handleClose}
+      >
+        <DialogTitle align="center" fontSize={30}>
+          Joken
+        </DialogTitle>
+        <Box bgcolor={'white'} maxWidth={400}>
+          {headerData.map((data) => (
+            <Typography
+              key={data.href + data.title}
+              component={Button}
+              fullWidth
+              href={data.href}
+              color="text.primary"
+              p={2}
+              onClick={handleClose}
+            >
+              {data.title}
+            </Typography>
           ))}
-        </ul>
-      </DivHeaderMenu>
+        </Box>
+      </Dialog>
     </>
   );
 };
 
-export default HamMenu;
-
-const DivHamMenu = styled.div<{ $isOpen: boolean }>`
-  display: none;
-  @media screen and (max-width: 767px) {
-    display: flex;
-  }
-  width: var(--len__header__height);
-  height: var(--len__header__height);
-
-  justify-content: center;
-  align-items: center;
-  cursor: pointer;
-  &:hover {
-    background: #00000022;
-  }
-  & span {
-    width: 70%;
-    height: 2px;
-    background: black;
-    position: relative;
-    transition: 0.3s;
-    &::before,
-    &::after {
-      content: '';
-      position: absolute;
-      width: 100%;
-      height: 2px;
-      background: black;
-      transition: 0.3s;
-      left: 0;
-      transform-origin: center center;
-    }
-    &::before {
-      top: -16px;
-    }
-    &::after {
-      top: 16px;
-    }
-    ${(props) =>
-      props.$isOpen
-        ? 'transform: rotate(45deg);\
-    &::before {transform: rotate(90deg); top: 0}\
-    &::after {top: 0}'
-        : ''}
-  }
-`;
-
-const DivHeaderMenu = styled.div<{ $isOpen: boolean }>`
-  display: ${(props) => (props.$isOpen ? 'flex' : 'none')};
-  position: fixed;
-  top: var(--len__header__height);
-  right: 0;
-  width: 100%;
-  height: calc(100% - var(--len__header__height));
-  background: rgba(0, 0, 0, 0.3);
-  justify-content: right;
-
-  & ul {
-    background: white;
-    max-width: 400px;
-    list-style: none;
-  }
-`;
-
-const LinkA = styled(Link)`
-  padding: 0 30px;
-  color: #000;
-  font-size: 1.3rem;
-  display: inline-block;
-  line-height: var(--len__header__height);
-  font-family:
-    'Montserrat',
-    -apple-system,
-    BlinkMacSystemFont,
-    'Segoe UI',
-    Roboto,
-    'Helvetica Neue',
-    Arial,
-    sans-serif,
-    'Apple Color Emoji',
-    'Segoe UI Emoji',
-    'Segoe UI Symbol',
-    'Noto Color Emoji';
-
-  &:hover {
-    color: var(--color_theme_joken);
-  }
-`;
+const Transition = React.forwardRef(function Transition(
+  props: TransitionProps & {
+    children: React.ReactElement<any, any>;
+  },
+  ref: React.Ref<unknown>
+) {
+  return <Slide direction="left" ref={ref} {...props} />;
+});
