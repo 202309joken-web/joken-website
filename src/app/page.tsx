@@ -3,7 +3,8 @@ import {
   IntroduceDescription,
   IntroDescription,
 } from '@/components/domains/website/IntroduceDescription';
-import IntroduceBlogs, {
+import {
+  IntroduceBlogs,
   BlogSummary,
 } from '@/components/domains/website/IntroduceBlogs';
 import { IntroduceAbout } from '@/components/domains/website/IntroduceAbout';
