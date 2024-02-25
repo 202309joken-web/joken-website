@@ -1,6 +1,7 @@
 import fs from 'fs';
-import IntroduceDescription, {
-  IntroDesc,
+import {
+  IntroduceDescription,
+  IntroDescription,
 } from '@/components/domains/website/IntroduceDescription';
 import IntroduceBlogs, {
   BlogSummary,
@@ -15,7 +16,7 @@ export default function Home() {
   const filePath = 'public/json/data.json';
   const data = JSON.parse(fs.readFileSync(filePath, 'utf-8'));
 
-  const introDesc: IntroDesc[] = data.introDesc;
+  const introDesc: IntroDescription[] = data.introDesc;
   const blogSummaries: BlogSummary[] = data.blogSummary;
 
   return (
